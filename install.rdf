@@ -6,7 +6,7 @@
                    em:id="edit-message-encoding-fallback@clear-code.com"
                    em:name="Edit Message Encoding Fallback"
                    em:version="0.1"
-                   em:description="Provides ability to fallback to something specific message encoding, if you are replying to a message with unsupported encoding like UTF-16LE."
+                   em:description="Fallback to a safe encoding, if you are replying to a message with unsupported encoding like UTF-16LE. (workaround for the Bug 961983)"
                    em:creator="ClearCode Inc."
                    em:unpack="true"
                    em:homepageURL="http://www.clear-code.com/">
@@ -17,7 +17,7 @@
     <em:localized>
       <RDF:Description em:locale="en-US"
                        em:name="Edit Message Encoding Fallback"
-                       em:description="Provides ability to fallback to something specific message encoding, if you are replying to a message with unsupported encoding like UTF-16LE."
+                       em:description="Fallback to a safe encoding, if you are replying to a message with unsupported encoding like UTF-16LE. (workaround for the Bug 961983)"
                        em:creator="ClearCode Inc."
                        em:homepageURL="http://www.clear-code.com/">
       </RDF:Description>
@@ -26,7 +26,7 @@
     <em:localized>
       <RDF:Description em:locale="ja"
                        em:name="Edit Message Encoding Fallback"
-                       em:description="UTF-16LEなどの送信非対応のエンコーディングのメッセージに返信しようとした時に、あらかじめ指定したエンコーディングに切り替えるようにします。"
+                       em:description="UTF-16LEなどの送信非対応のエンコーディングのメッセージに返信しようとした時に、安全なエンコーディングに切り替えます。（Bug 961983の暫定的な回避策）"
                        em:creator="ClearCode Inc."
                        em:homepageURL="http://www.clear-code.com/">
       </RDF:Description>
