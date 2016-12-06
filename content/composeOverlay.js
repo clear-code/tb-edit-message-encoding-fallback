@@ -3,15 +3,20 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 (function() {
+  const PREF_FALLBACK = 'extensions.edit-message-encoding-fallback@clear-code.com.fallback';
+
+  const { Services } = Components.utils.import('resource://gre/modules/Services.jsm');
+
   var originalRecipients2CompFields = window.Recipients2CompFields;
   window.Recipients2CompFields = function Recipients2CompFields(aCompFields) {
     var charsetData = CharsetMenu.getData();
     var allSupportedEncodings = charsetData.pinnedCharsets.map(function(aData) { return aData.value })
                                   .concat(charsetData.otherCharsets.map(function(aData) { return aData.value }));
     if (gMsgCompose.compFields.characterSet &&
-        allSupportedEncodings.indexOf(gMsgCompose.compFields.characterSet) < 0)
-      SetDocumentCharacterSet('UTF-8');
-
+        allSupportedEncodings.indexOf(gMsgCompose.compFields.characterSet) < 0) {
+      let encoding = Services.prefs.getComplexValue(PREF_FALLBACK, Ci.nsISupportsString).data;
+      SetDocumentCharacterSet(encoding);
+    }
     return originalRecipients2CompFields.apply(this, arguments);
   };
 })();
