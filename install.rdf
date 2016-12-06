@@ -5,7 +5,7 @@
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="edit-message-encoding-fallback@clear-code.com"
                    em:name="Edit Message Encoding Fallback"
-                   em:version="0.1"
+                   em:version="1.0"
                    em:description="Fallback to a safe encoding, if you are replying to a message with unsupported encoding like UTF-16LE. (workaround for the Bug 961983)"
                    em:creator="ClearCode Inc."
                    em:unpack="true"
