@@ -9,7 +9,8 @@
                    em:description="Fallback to a safe encoding, if you are replying to a message with unsupported encoding like UTF-16LE. (workaround for the Bug 961983)"
                    em:creator="ClearCode Inc."
                    em:unpack="true"
-                   em:homepageURL="http://www.clear-code.com/">
+                   em:homepageURL="http://www.clear-code.com/"
+                   em:type="2">
 
     <!--em:updateURL></em:updateURL-->
     <!--em:updateKey></em:updateKey-->
