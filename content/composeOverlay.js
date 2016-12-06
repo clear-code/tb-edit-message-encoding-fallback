@@ -12,10 +12,10 @@
     var result = originalRecipients2CompFields.apply(this, arguments);
 
     var charsetData = CharsetMenu.getData();
-    var allSupportedEncodings = charsetData.pinnedCharsets.map(function(aData) { return aData.value })
-                                  .concat(charsetData.otherCharsets.map(function(aData) { return aData.value }));
+    var allSupportedEncodings = charsetData.pinnedCharsets.map(function(aData) { return aData.value.toLowerCase(); })
+                                  .concat(charsetData.otherCharsets.map(function(aData) { return aData.value.toLowerCase(); }));
     if (gMsgCompose.compFields.characterSet &&
-        allSupportedEncodings.indexOf(gMsgCompose.compFields.characterSet) < 0) {
+        allSupportedEncodings.indexOf(gMsgCompose.compFields.characterSet.toLowerCase()) < 0) {
       let encoding = Services.prefs.getComplexValue(PREF_FALLBACK, Components.interfaces.nsISupportsString).data;
       SetDocumentCharacterSet(encoding);
     }
