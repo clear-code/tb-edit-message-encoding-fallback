@@ -14,7 +14,7 @@
                                   .concat(charsetData.otherCharsets.map(function(aData) { return aData.value }));
     if (gMsgCompose.compFields.characterSet &&
         allSupportedEncodings.indexOf(gMsgCompose.compFields.characterSet) < 0) {
-      let encoding = Services.prefs.getComplexValue(PREF_FALLBACK, Ci.nsISupportsString).data;
+      let encoding = Services.prefs.getComplexValue(PREF_FALLBACK, Components.interfaces.nsISupportsString).data;
       SetDocumentCharacterSet(encoding);
     }
     return originalRecipients2CompFields.apply(this, arguments);
